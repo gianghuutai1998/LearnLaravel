@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', 'PostsController@contact')->name('posts.contact');
 Route::resource('posts', PostsController::class);
+Route::get('/contact', 'PostsController@contact')->name('posts.contact');
+Route::get('/show-posts/{id}/{name}', 'PostsController@showPosts');
